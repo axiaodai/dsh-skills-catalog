@@ -3,18 +3,25 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>DSH 技能索引</title>
 <style>
-:root{--bg:#0f1115;--card:#171a21;--fg:#e6e8ee;--dim:#9aa3b2;--accent:#6aa8ff;--line:#252a34}
+:root{--bg:#0f1115;--card:#171a21;--fg:#e6e8ee;--dim:#9aa3b2;--accent:#6aa8ff;--line:#252a34;--chip:#1e2430}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
-header{padding:28px 20px 16px;border-bottom:1px solid var(--line)}
+header{padding:26px 20px 14px;border-bottom:1px solid var(--line)}
 h1{margin:0 0 6px;font-size:22px}
 .meta{color:var(--dim);font-size:13px}
-main{padding:18px 20px 60px;max-width:980px;margin:0 auto}
-#q{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:15px;margin-bottom:16px}
+main{padding:16px 20px 60px;max-width:980px;margin:0 auto}
+#q{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:15px;margin-bottom:10px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.filters button{background:var(--chip);color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer}
+.filters button.on{color:#0f1115;background:var(--accent);border-color:var(--accent)}
+.filters .sep{color:var(--line);align-self:center}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
 .card h2{margin:0 0 6px;font-size:17px;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
 .tag{font-size:12px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:1px 8px}
 .sum{margin:4px 0 8px}
+.trig{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.trig button{background:transparent;color:var(--accent);border:1px dashed var(--line);border-radius:8px;padding:3px 9px;font-size:13px;cursor:pointer}
+.trig button:hover{border-color:var(--accent)}
 .detail{margin:0 0 8px;color:var(--dim);font-size:13px;white-space:pre-wrap}
 .foot{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--dim)}
 a{color:var(--accent);text-decoration:none}
@@ -23,69 +30,148 @@ a:hover{text-decoration:underline}
 </style>
 </head><body>
 <header><h1>DSH 技能索引</h1>
-<div class="meta">9 个技能 · 生成于 2026-10-04 16:56 · 归档源：<a href="https://github.com/axiaodai/dsh-skills">axiaodai/dsh-skills</a>（私有）</div>
+<div class="meta">9 个技能 · 生成于 2026-10-04 17:03 · 本体在私有仓库 <a href="https://github.com/axiaodai/dsh-skills">axiaodai/dsh-skills</a></div>
 </header><main>
-<input id="q" placeholder="搜索技能名 / 用途 / 关键词…" autocomplete="off">
+<input id="q" placeholder="搜索技能名 / 用途 / 触发词…" autocomplete="off">
+<div class="filters" id="filters">
+  <button data-f="origin" data-v="all" class="on">全部</button>
+  <button data-f="origin" data-v="self">自建</button>
+  <button data-f="origin" data-v="third">第三方</button>
+  <span class="sep">|</span>
+  <button data-f="license" data-v="all" class="on">全部授权</button>
+  <button data-f="license" data-v="MIT">MIT</button>
+  <button data-f="license" data-v="未声明">未声明</button>
+  <button data-f="license" data-v="自建">自建</button>
+</div>
 <div id="list">
-<section class="card">
+<section class="card" data-origin="self" data-license="自建" data-search="official-writing-polish 中文正式文稿的四规范改稿流程：定调、磨句、重排逻辑、提纯格调，输出定稿与逐条修改说明。 把中文正式文稿打磨到“王牌笔杆子”水准的四规范流程：对标《人民日报》《新华社》《先锋》《文汇》定主基调，逐层完成语句打磨、逻辑重构与格调提纯，交付定稿和逐条修改说明。适用于领导讲话、工作总结、汇报材料、经验材料、新闻通讯、评论、致辞、简报等文体的起草、改写与定稿。用户提出“润色、改稿、提升文笔、去 ai 味、去口语化、对标人民日报风格”时使用。 帮我润色这段 改成人民日报口吻 去掉 ai 味 这篇讲话稿帮我改 自建">
 <h2>official-writing-polish<span class="tag">4 文件</span><span class="tag">0.02 MB</span></h2>
 <p class="sum">中文正式文稿的四规范改稿流程：定调、磨句、重排逻辑、提纯格调，输出定稿与逐条修改说明。</p>
+<div class="trig">
+  <button data-copy="帮我润色这段" title="点击复制">「帮我润色这段」</button>
+  <button data-copy="改成人民日报口吻" title="点击复制">「改成人民日报口吻」</button>
+  <button data-copy="去掉 AI 味" title="点击复制">「去掉 AI 味」</button>
+  <button data-copy="这篇讲话稿帮我改" title="点击复制">「这篇讲话稿帮我改」</button>
+</div>
 <p class="detail">把中文正式文稿打磨到“王牌笔杆子”水准的四规范流程：对标《人民日报》《新华社》《先锋》《文汇》定主基调，逐层完成语句打磨、逻辑重构与格调提纯，交付定稿和逐条修改说明。适用于领导讲话、工作总结、汇报材料、经验材料、新闻通讯、评论、致辞、简报等文体的起草、改写与定稿。用户提出“润色、改稿、提升文笔、去 AI 味、去口语化、对标人民日报风格”时使用。</p>
-<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/01-official-writing-polish">目录</a><span>自建</span><span>授权：自建</span></div>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/01-official-writing-polish">目录</a><span>自建</span><span>授权：自建</span><span>更新于 2026-10-04</span></div>
 </section>
-<section class="card">
+<section class="card" data-origin="third" data-license="MIT" data-search="bys-travel-plan 对话式旅行规划：从「不知道去哪」到可以照着走的每日行程，交付 markdown 攻略与单文件 html 手账。 不一书旅行规划skill（bys-travel-plan）：从&quot;有空但不知道去哪&quot;或&quot;目的地定了还没做攻略&quot;， 一路做到**可以照着走、遇到变化能调**的每日行程，交付同一版本的完整 markdown 攻略 + 双击就能打开的单文件 html， 用户确认后可选生成图片行程卡。 核心不是写一篇旅游文章，而是一条可追溯的链路：需求 → 证据 → 取舍 → 每日行程 → 可行性核查 → 出发前行动 → 交付。 ⛔ 不为完整而编造数据（票价、开放时间、路程时长查不到就写&quot;未知&quot;，不写 0、不写&quot;正常开放&quot;）； ⛔ 不为精确而增加注册门槛（不要求用户注册地图、天气、酒店 api；先用宿主已有工具，再联网… 下个月想找个周末出去玩 帮我做 xx 攻略 带老人怎么安排 把这天改轻松点 mit">
 <h2>bys-travel-plan<span class="tag">25 文件</span><span class="tag">0.41 MB</span></h2>
 <p class="sum">对话式旅行规划：从「不知道去哪」到可以照着走的每日行程，交付 Markdown 攻略与单文件 HTML 手账。</p>
-<p class="detail">不一书旅行规划Skill（bys-travel-plan）：从&quot;有空但不知道去哪&quot;或&quot;目的地定了还没做攻略&quot;， 一路做到**可以照着走、遇到变化能调**的每日行程，交付同一版本的完整 Markdown 攻略 + 双击就能打开的单文件 HTML， 用户确认后可选生成图片行程卡。 核心不是写一篇旅游文章，而是一条可追溯的链路：需求 → 证据 → 取舍 → 每日行程 → 可行性核查 → 出发前行动 → 交付。 ⛔ 不为完整而编造数据（票价、开放时间、路程时长查不到就写&quot;未知&quot;，不写 0、不写&quot;正常开放&quot;）； ⛔ 不为精确而增加注册门槛（不要求用户注册地图、天气、酒店 API；先用宿主已有工具，再联网查资料，再保守估算并标注）； ⛔ 不为好…</p>
-<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/02-bys-travel-plan">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span></div>
+<div class="trig">
+  <button data-copy="下个月想找个周末出去玩" title="点击复制">「下个月想找个周末出去玩」</button>
+  <button data-copy="帮我做 XX 攻略" title="点击复制">「帮我做 XX 攻略」</button>
+  <button data-copy="带老人怎么安排" title="点击复制">「带老人怎么安排」</button>
+  <button data-copy="把这天改轻松点" title="点击复制">「把这天改轻松点」</button>
+</div>
+<p class="detail">不一书旅行规划Skill（bys-travel-plan）：从&quot;有空但不知道去哪&quot;或&quot;目的地定了还没做攻略&quot;， 一路做到**可以照着走、遇到变化能调**的每日行程，交付同一版本的完整 Markdown 攻略 + 双击就能打开的单文件 HTML， 用户确认后可选生成图片行程卡。 核心不是写一篇旅游文章，而是一条可追溯的链路：需求 → 证据 → 取舍 → 每日行程 → 可行性核查 → 出发前行动 → 交付。 ⛔ 不为完整而编造数据（票价、开放时间、路程时长查不到就写&quot;未知&quot;，不写 0、不写&quot;正常开放&quot;）； ⛔ 不为精确而增加注册门槛（不要求用户注册地图、天气、酒店 API；先用宿主已有工具，再联网…</p>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/02-bys-travel-plan">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span><span>更新于 2026-10-04</span></div>
 </section>
-<section class="card">
+<section class="card" data-origin="third" data-license="未声明" data-search="handdraw-style-prompter 手绘风格编号（#001–#288）与主题色（c-01–c-36）提示词库，覆盖配图、海报、封面、ip 形象与风格融合。 turn a 001–288 hand-drawn style number and image theme into bilingual prompts, using model capability data to decide when core traits and a numbered reference image are required. 用 #018 风格写生图提示词 给文章做封面 设计一个 ip 形象 融合两种风格 未声明">
 <h2>handdraw-style-prompter<span class="tag">795 文件</span><span class="tag">49.02 MB</span></h2>
 <p class="sum">手绘风格编号（#001–#288）与主题色（C-01–C-36）提示词库，覆盖配图、海报、封面、IP 形象与风格融合。</p>
+<div class="trig">
+  <button data-copy="用 #018 风格写生图提示词" title="点击复制">「用 #018 风格写生图提示词」</button>
+  <button data-copy="给文章做封面" title="点击复制">「给文章做封面」</button>
+  <button data-copy="设计一个 IP 形象" title="点击复制">「设计一个 IP 形象」</button>
+  <button data-copy="融合两种风格" title="点击复制">「融合两种风格」</button>
+</div>
 <p class="detail">Turn a 001–288 hand-drawn style number and image theme into bilingual prompts, using model capability data to decide when core traits and a numbered reference image are required.</p>
-<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/03-handraw-style">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：未声明</span></div>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/03-handraw-style">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：未声明</span><span>更新于 2026-10-04</span></div>
 </section>
-<section class="card">
+<section class="card" data-origin="third" data-license="MIT" data-search="book-to-skill 把书或文档（pdf/epub/docx/html/md…）转成结构化技能：分章正文 + 术语 + 模式 + 速查表。 &quot;converts books and documents (pdf, epub, docx, html, markdown, plain text, rtf, mobi/azw with calibre) into structured agent skills, extracting frameworks, mental models, principles, techniques, and anti-patterns. use when the user wants to study a document through github copilot cli, amp, claude c… 把这本书转成技能 用 book-to-skill 处理这份 pdf mit">
 <h2>book-to-skill<span class="tag">119 文件</span><span class="tag">1.8 MB</span></h2>
 <p class="sum">把书或文档（PDF/EPUB/DOCX/HTML/MD…）转成结构化技能：分章正文 + 术语 + 模式 + 速查表。</p>
-<p class="detail">&quot;Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown, plain text, RTF, MOBI/AZW with Calibre) into structured agent skills, extracting frameworks, mental models, principles, techniques, and anti-patterns. Use when the user wants to study a document through GitHub Copilot CLI, Amp, Claude Code, Hermes Agent, O…</p>
-<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/04-book-to-skill">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span></div>
+<div class="trig">
+  <button data-copy="把这本书转成技能" title="点击复制">「把这本书转成技能」</button>
+  <button data-copy="用 book-to-skill 处理这份 PDF" title="点击复制">「用 book-to-skill 处理这份 PDF」</button>
+</div>
+<p class="detail">&quot;Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown, plain text, RTF, MOBI/AZW with Calibre) into structured agent skills, extracting frameworks, mental models, principles, techniques, and anti-patterns. Use when the user wants to study a document through GitHub Copilot CLI, Amp, Claude C…</p>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/04-book-to-skill">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span><span>更新于 2026-10-04</span></div>
 </section>
-<section class="card">
+<section class="card" data-origin="self" data-license="自建" data-search="civil-code 《民法典》7 编 1260 条结构化检索：条号定位、编章目录、请求权链条、时限与数字速查。 《中华人民共和国民法典》结构化技能：7 编 1260 条条文全文，按条号定点检索，附条号索引、编章目录、高频场景请求权基础链条、时限与数字速查、术语表。用于查条文原文、找请求权基础与构成要件、核对期限数字、做要件与抗辩分析。触发词：民法典、第…条、合同解除、违约责任、违约金、定金、买卖合同、租赁、借款、保证担保、抵押、居住权、善意取得、诉讼时效、意思表示、欺诈胁迫、夫妻共同财产、夫妻共同债务、离婚、法定继承、遗嘱、遗赠扶养协议、人格权、隐私权、个人信息、名誉权、产品责任、交通事故、医疗损害、高空抛物、精神损害赔偿。 民法典第 577 条 合同解除的条件 夫妻共同债务怎么认定 房东卖房我有啥权利 自建">
 <h2>civil-code<span class="tag">28 文件</span><span class="tag">1.15 MB</span></h2>
 <p class="sum">《民法典》7 编 1260 条结构化检索：条号定位、编章目录、请求权链条、时限与数字速查。</p>
+<div class="trig">
+  <button data-copy="民法典第 577 条" title="点击复制">「民法典第 577 条」</button>
+  <button data-copy="合同解除的条件" title="点击复制">「合同解除的条件」</button>
+  <button data-copy="夫妻共同债务怎么认定" title="点击复制">「夫妻共同债务怎么认定」</button>
+  <button data-copy="房东卖房我有啥权利" title="点击复制">「房东卖房我有啥权利」</button>
+</div>
 <p class="detail">《中华人民共和国民法典》结构化技能：7 编 1260 条条文全文，按条号定点检索，附条号索引、编章目录、高频场景请求权基础链条、时限与数字速查、术语表。用于查条文原文、找请求权基础与构成要件、核对期限数字、做要件与抗辩分析。触发词：民法典、第…条、合同解除、违约责任、违约金、定金、买卖合同、租赁、借款、保证担保、抵押、居住权、善意取得、诉讼时效、意思表示、欺诈胁迫、夫妻共同财产、夫妻共同债务、离婚、法定继承、遗嘱、遗赠扶养协议、人格权、隐私权、个人信息、名誉权、产品责任、交通事故、医疗损害、高空抛物、精神损害赔偿。</p>
-<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/05-civil-code">目录</a><span>自建</span><span>授权：自建（法条取自官方发布文本）</span></div>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/05-civil-code">目录</a><span>自建</span><span>授权：自建</span><span>更新于 2026-10-04</span></div>
 </section>
-<section class="card">
+<section class="card" data-origin="self" data-license="自建" data-search="upstream-bug-report 把本机排查到的缺陷整理成 issue 与 pr：证据化报告、按同一处代码拆分、无 git 时用 api 建 pr。 把本机排查出的上游/第三方缺陷整理成证据化报告，并直接提交为 github issue 与 pr —— 含按“同一处代码”合并拆分 issue、无 git 且 github.com 不可达时改用 git data api 建 pr、行尾与备份文件导致 diff 污染的踩坑清单、以及提交后的自查。适用于：发现开源项目缺陷想反馈、要给上游提 pr、在受限网络或无 git 环境提交、维护本地补丁与 `.upstream` 备份。 给上游提 issue 把这个 bug 反馈给作者 整理成 pr 自建">
 <h2>upstream-bug-report<span class="tag">6 文件</span><span class="tag">0.03 MB</span></h2>
 <p class="sum">把本机排查到的缺陷整理成 issue 与 PR：证据化报告、按同一处代码拆分、无 git 时用 API 建 PR。</p>
+<div class="trig">
+  <button data-copy="给上游提 issue" title="点击复制">「给上游提 issue」</button>
+  <button data-copy="把这个 bug 反馈给作者" title="点击复制">「把这个 bug 反馈给作者」</button>
+  <button data-copy="整理成 PR" title="点击复制">「整理成 PR」</button>
+</div>
 <p class="detail">把本机排查出的上游/第三方缺陷整理成证据化报告，并直接提交为 GitHub issue 与 PR —— 含按“同一处代码”合并拆分 issue、无 git 且 github.com 不可达时改用 Git Data API 建 PR、行尾与备份文件导致 diff 污染的踩坑清单、以及提交后的自查。适用于：发现开源项目缺陷想反馈、要给上游提 PR、在受限网络或无 git 环境提交、维护本地补丁与 `.upstream` 备份。</p>
-<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/06-upstream-bug-report">目录</a><span>自建</span><span>授权：自建</span></div>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/06-upstream-bug-report">目录</a><span>自建</span><span>授权：自建</span><span>更新于 2026-10-04</span></div>
 </section>
-<section class="card">
+<section class="card" data-origin="third" data-license="MIT" data-search="&quot;cli-anything-photoshop&quot; 用命令行驱动 photoshop：建 psd、图层与选区操作、加文字层、导出 png/jpeg/webp。 &quot;通过 com 自动化操控 adobe photoshop 的 cli harness。支持项目管理、图层操作、选区控制、文字编辑、图像调整和多格式导出。&quot; 新建 1920&#215;1080 的 psd 加一个标题文字层 导出 png mit">
 <h2>&quot;cli-anything-photoshop&quot;<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
-<p class="sum">WPS / Photoshop / Illustrator / Zotero 的 COM 自动化命令行封装（技能内只含说明，CLI 需另装）。</p>
+<p class="sum">用命令行驱动 Photoshop：建 PSD、图层与选区操作、加文字层、导出 PNG/JPEG/WebP。</p>
+<div class="trig">
+  <button data-copy="新建 1920&#215;1080 的 PSD" title="点击复制">「新建 1920&#215;1080 的 PSD」</button>
+  <button data-copy="加一个标题文字层" title="点击复制">「加一个标题文字层」</button>
+  <button data-copy="导出 PNG" title="点击复制">「导出 PNG」</button>
+</div>
 <p class="detail">&quot;通过 COM 自动化操控 Adobe Photoshop 的 CLI harness。支持项目管理、图层操作、选区控制、文字编辑、图像调整和多格式导出。&quot;</p>
-<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/07-harness-cli-skills/cli-anything-photoshop">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span></div>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/07-harness-cli-skills/cli-anything-photoshop">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span><span>更新于 2026-10-04</span></div>
 </section>
-<section class="card">
+<section class="card" data-origin="third" data-license="MIT" data-search="&quot;cli-anything-wps&quot; 用命令行驱动 wps / office 生成 word、excel、ppt、pdf，支持 json 数据驱动的批量出稿。 &quot;wps office cli — json数据驱动ppt自动生成 + 命令行操控wps文字/表格/演示文稿&quot; 用 wps 生成一份 pptx json 数据做成 12 页 ppt 导出成 pdf mit">
 <h2>&quot;cli-anything-wps&quot;<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
-<p class="sum">WPS / Photoshop / Illustrator / Zotero 的 COM 自动化命令行封装（技能内只含说明，CLI 需另装）。</p>
+<p class="sum">用命令行驱动 WPS / Office 生成 Word、Excel、PPT、PDF，支持 JSON 数据驱动的批量出稿。</p>
+<div class="trig">
+  <button data-copy="用 WPS 生成一份 PPTX" title="点击复制">「用 WPS 生成一份 PPTX」</button>
+  <button data-copy="JSON 数据做成 12 页 PPT" title="点击复制">「JSON 数据做成 12 页 PPT」</button>
+  <button data-copy="导出成 PDF" title="点击复制">「导出成 PDF」</button>
+</div>
 <p class="detail">&quot;WPS Office CLI — JSON数据驱动PPT自动生成 + 命令行操控WPS文字/表格/演示文稿&quot;</p>
-<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/07-harness-cli-skills/cli-anything-wps">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span></div>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/07-harness-cli-skills/cli-anything-wps">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span><span>更新于 2026-10-04</span></div>
 </section>
-<section class="card">
+<section class="card" data-origin="third" data-license="MIT" data-search="cli-anything-zotero zotero 文献库命令行接口，并接入 27 个学术技能（写论文、系统评价、审稿、期刊图表等）。 cli harness for zotero. 列出我 zotero 里的条目 导出 apa 引文 帮我写综述 mit">
 <h2>cli-anything-zotero<span class="tag">1 文件</span><span class="tag">0.01 MB</span></h2>
-<p class="sum">WPS / Photoshop / Illustrator / Zotero 的 COM 自动化命令行封装（技能内只含说明，CLI 需另装）。</p>
+<p class="sum">Zotero 文献库命令行接口，并接入 27 个学术技能（写论文、系统评价、审稿、期刊图表等）。</p>
+<div class="trig">
+  <button data-copy="列出我 Zotero 里的条目" title="点击复制">「列出我 Zotero 里的条目」</button>
+  <button data-copy="导出 APA 引文" title="点击复制">「导出 APA 引文」</button>
+  <button data-copy="帮我写综述" title="点击复制">「帮我写综述」</button>
+</div>
 <p class="detail">CLI harness for Zotero.</p>
-<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/07-harness-cli-skills/cli-anything-zotero">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span></div>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/07-harness-cli-skills/cli-anything-zotero">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span><span>更新于 2026-10-04</span></div>
 </section>
 </div><p class="empty" id="none" style="display:none">没有匹配的技能</p>
 <script>
-const q=document.getElementById("q"),cards=[...document.querySelectorAll(".card")],none=document.getElementById("none");
-q.addEventListener("input",()=>{const t=q.value.trim().toLowerCase();let n=0;
-for(const c of cards){const hit=!t||c.textContent.toLowerCase().includes(t);c.style.display=hit?"":"none";if(hit)n++;}
-none.style.display=n?"none":"block";});
+const q=document.getElementById("q"),list=document.getElementById("list"),
+      cards=[...document.querySelectorAll(".card")],none=document.getElementById("none");
+let f={origin:"all",license:"all"};
+function apply(){
+  const t=q.value.trim().toLowerCase();let n=0;
+  for(const c of cards){
+    const ok=(f.origin==="all"||c.dataset.origin===f.origin)
+          &&(f.license==="all"||c.dataset.license===f.license)
+          &&(!t||c.dataset.search.includes(t));
+    c.style.display=ok?"":"none";if(ok)n++;
+  }
+  none.style.display=n?"none":"block";
+}
+q.addEventListener("input",apply);
+document.getElementById("filters").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-f]");if(!b)return;
+  const field=b.dataset.f;f[field]=b.dataset.v;
+  document.querySelectorAll('button[data-f="'+field+'"]').forEach(x=>x.classList.toggle("on",x===b));
+  apply();
+});
+list.addEventListener("click",async e=>{
+  const b=e.target.closest("button[data-copy]");if(!b)return;
+  try{await navigator.clipboard.writeText(b.dataset.copy);
+      const old=b.textContent;b.textContent="已复制";setTimeout(()=>b.textContent=old,900);}catch(_){}
+});
 </script>
 </main></body></html>
