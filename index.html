@@ -39,7 +39,7 @@ a:hover{text-decoration:underline}
 </style>
 </head><body>
 <header><h1>DSH 技能索引</h1>
-<div class="meta">10 个技能 · 3 组 · 生成于 2026-10-05 16:13 · 本体在私有仓库 <a href="https://github.com/axiaodai/dsh-skills">axiaodai/dsh-skills</a></div>
+<div class="meta">19 个技能 · 3 组 · 生成于 2026-10-05 16:18 · 本体在私有仓库 <a href="https://github.com/axiaodai/dsh-skills">axiaodai/dsh-skills</a></div>
 </header><main>
 <input id="q" placeholder="搜索技能名 / 用途 / 触发词…" autocomplete="off">
 <div class="filters" id="filters">
@@ -49,7 +49,6 @@ a:hover{text-decoration:underline}
   <span class="sep">|</span>
   <button data-f="license" data-v="all" class="on">全部授权</button>
   <button data-f="license" data-v="MIT">MIT</button>
-  <button data-f="license" data-v="未标注">未标注</button>
   <button data-f="license" data-v="未声明">未声明</button>
   <button data-f="license" data-v="自建">自建</button>
   <button class="copyall" id="copyall" title="把当前可见技能的触发词全部复制">复制全部触发词</button>
@@ -115,7 +114,7 @@ a:hover{text-decoration:underline}
 <div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/05-civil-code">目录</a><span>自建</span><span>授权：自建</span><span>更新于 2026-10-04</span></div>
 </section>
 </details>
-<details class="grp" open><summary>工具与自动化<span class="tag">4</span></summary>
+<details class="grp" open><summary>工具与自动化<span class="tag">5</span></summary>
 <section class="card" data-origin="self" data-license="自建" data-name="upstream-bug-report" data-triggers="给上游提 issue|把这个 bug 反馈给作者|整理成 PR" data-search="upstream-bug-report 把本机排查到的缺陷整理成 issue 与 pr：证据化报告、按同一处代码拆分、无 git 时用 api 建 pr。 把本机排查出的上游/第三方缺陷整理成证据化报告，并直接提交为 github issue 与 pr —— 含按“同一处代码”合并拆分 issue、无 git 且 github.com 不可达时改用 git data api 建 pr、行尾与备份文件导致 diff 污染的踩坑清单、以及提交后的自查。适用于：发现开源项目缺陷想反馈、要给上游提 pr、在受限网络或无 git 环境提交、维护本地补丁与 `.upstream` 备份。 给上游提 issue 把这个 bug 反馈给作者 整理成 pr 自建 工具与自动化">
 <h2>upstream-bug-report<span class="tag">6 文件</span><span class="tag">0.03 MB</span></h2>
 <p class="sum">把本机排查到的缺陷整理成 issue 与 PR：证据化报告、按同一处代码拆分、无 git 时用 API 建 PR。</p>
@@ -160,12 +159,110 @@ a:hover{text-decoration:underline}
 <p class="detail">CLI harness for Zotero.</p>
 <div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/07-harness-cli-skills/cli-anything-zotero">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span><span>更新于 2026-10-04</span></div>
 </section>
-</details>
-<details class="grp" open><summary>其他<span class="tag">1</span></summary>
-<section class="card" data-origin="self" data-license="未标注" data-name="font-license-risk" data-triggers="" data-search="font-license-risk 扫描 windows 字体目录，按商用侵权风险把全部字体分成四类（开源可商用 / 系统随附受限 / 高风险商业字体须买授权 / 系统文件勿复制），可选复制到四个分类文件夹，并生成中文网页与 csv 报告；缺证字体读字体内部版权字段定性。适用于：想清理字体库、判断某字体能不能商用、排查 logo/包装/网页嵌入的字体侵权风险、审计 c:\windows\fonts，或在换机后重新盘点字体授权。 扫描 windows 字体目录，按商用侵权风险把全部字体分成四类（开源可商用 / 系统随附受限 / 高风险商业字体须买授权 / 系统文件勿复制），可选复制到四个分类文件夹，并生成中文网页与 csv 报告；缺证字体读字体内部版权字段定性。适用于：想清理字体库、判断某字体能不能商用、排查 logo/包装/网页嵌入的字体侵权风险、审计 c:\windows\fonts，或在换机后重新盘点字体授权。  未标注 其他">
+<section class="card" data-origin="self" data-license="自建" data-name="font-license-risk" data-triggers="哪些字体能商用|排查字体侵权风险|清理字体库" data-search="font-license-risk 扫描 windows 字体目录，按商用侵权风险分四类，生成中文网页与 csv 报告，可选复制到分类文件夹。 扫描 windows 字体目录，按商用侵权风险把全部字体分成四类（开源可商用 / 系统随附受限 / 高风险商业字体须买授权 / 系统文件勿复制），可选复制到四个分类文件夹，并生成中文网页与 csv 报告；缺证字体读字体内部版权字段定性。适用于：想清理字体库、判断某字体能不能商用、排查 logo/包装/网页嵌入的字体侵权风险、审计 c:\windows\fonts，或在换机后重新盘点字体授权。 哪些字体能商用 排查字体侵权风险 清理字体库 自建 工具与自动化">
 <h2>font-license-risk<span class="tag">15 文件</span><span class="tag">0.13 MB</span></h2>
-<p class="sum">扫描 Windows 字体目录，按商用侵权风险把全部字体分成四类（开源可商用 / 系统随附受限 / 高风险商业字体须买授权 / 系统文件勿复制），可选复制到四个分类文件夹，并生成中文网页与 CSV 报告；缺证字体读字体内部版权字段定性。适用于：想清理字体库、判断某字体能不能商用、排查 Logo/包装/网页嵌入的字体侵权风险、审计 C:\Windows\Fonts，或在换机后重新盘点字体授权。</p>
-<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/08-font-license-risk">目录</a><span>自建</span><span>授权：未标注</span><span>更新于 2026-10-05</span></div>
+<p class="sum">扫描 Windows 字体目录，按商用侵权风险分四类，生成中文网页与 CSV 报告，可选复制到分类文件夹。</p>
+<div class="trig">
+  <button data-copy="哪些字体能商用" title="点击复制">「哪些字体能商用」</button>
+  <button data-copy="排查字体侵权风险" title="点击复制">「排查字体侵权风险」</button>
+  <button data-copy="清理字体库" title="点击复制">「清理字体库」</button>
+</div>
+<p class="detail">扫描 Windows 字体目录，按商用侵权风险把全部字体分成四类（开源可商用 / 系统随附受限 / 高风险商业字体须买授权 / 系统文件勿复制），可选复制到四个分类文件夹，并生成中文网页与 CSV 报告；缺证字体读字体内部版权字段定性。适用于：想清理字体库、判断某字体能不能商用、排查 Logo/包装/网页嵌入的字体侵权风险、审计 C:\Windows\Fonts，或在换机后重新盘点字体授权。</p>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/08-font-license-risk">目录</a><span>自建</span><span>授权：自建</span><span>更新于 2026-10-05</span></div>
+</section>
+</details>
+<details class="grp" open><summary>3D 与图像生成<span class="tag">9</span></summary>
+<section class="card" data-origin="third" data-license="MIT" data-name="image-blast-3d" data-triggers="把这个物体做成 3D 模型|生成一个 glb 模型" data-search="image-blast-3d 生成单个原子 3d 物体（hunyuan / meshy），可选面数、pbr、lowpoly 等参数。 generate one specified atomic 3d object. use when the user names exactly one object instance to make, or provides one image plus the object name/description. 把这个物体做成 3d 模型 生成一个 glb 模型 mit 3d 与图像生成">
+<h2>image-blast-3d<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
+<p class="sum">生成单个原子 3D 物体（Hunyuan / Meshy），可选面数、PBR、LowPoly 等参数。</p>
+<div class="trig">
+  <button data-copy="把这个物体做成 3D 模型" title="点击复制">「把这个物体做成 3D 模型」</button>
+  <button data-copy="生成一个 glb 模型" title="点击复制">「生成一个 glb 模型」</button>
+</div>
+<p class="detail">Generate one specified atomic 3D object. Use when the user names exactly one object instance to make, or provides one image plus the object name/description.</p>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/09-image-blast-3d">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span></div>
+</section>
+<section class="card" data-origin="third" data-license="MIT" data-name="image-blast-image-edit" data-triggers="编辑这张图|把画面里某样东西去掉" data-search="image-blast-image-edit 单次图像编辑（fal 支撑）：源图清理、去物体、生成底板。 generate one image edit from explicit input images and a prompt. use for source cleanup, clean plates, object removal, or other fal-backed image edits. 编辑这张图 把画面里某样东西去掉 mit 3d 与图像生成">
+<h2>image-blast-image-edit<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
+<p class="sum">单次图像编辑（FAL 支撑）：源图清理、去物体、生成底板。</p>
+<div class="trig">
+  <button data-copy="编辑这张图" title="点击复制">「编辑这张图」</button>
+  <button data-copy="把画面里某样东西去掉" title="点击复制">「把画面里某样东西去掉」</button>
+</div>
+<p class="detail">Generate one image edit from explicit input images and a prompt. Use for source cleanup, clean plates, object removal, or other FAL-backed image edits.</p>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/10-image-blast-image-edit">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span></div>
+</section>
+<section class="card" data-origin="third" data-license="MIT" data-name="image-blast-plate" data-triggers="生成干净底板|把前景物体从图里去掉" data-search="image-blast-plate 生成干净底板：把前景物体从源图移除，作为环境生成的输入。 generate one clean plate/source cleanup image for an image-blaster world. use after confirmed objects exist, when removing foreground objects or other specified content from a source image. 生成干净底板 把前景物体从图里去掉 mit 3d 与图像生成">
+<h2>image-blast-plate<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
+<p class="sum">生成干净底板：把前景物体从源图移除，作为环境生成的输入。</p>
+<div class="trig">
+  <button data-copy="生成干净底板" title="点击复制">「生成干净底板」</button>
+  <button data-copy="把前景物体从图里去掉" title="点击复制">「把前景物体从图里去掉」</button>
+</div>
+<p class="detail">Generate one clean plate/source cleanup image for an IMAGE-BLASTER world. Use after confirmed objects exist, when removing foreground objects or other specified content from a source image.</p>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/11-image-blast-plate">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span></div>
+</section>
+<section class="card" data-origin="third" data-license="MIT" data-name="image-blast-project" data-triggers="新建一个 image-blast 项目|看看当前项目状态" data-search="image-blast-project 管理 image-blaster 项目信封（worlds/&lt;slug&gt;）：状态、资产索引、下载与清理；其他子技能之前先用它。 create, inspect, and manage an image-blast project envelope under worlds/&lt;slug&gt;. use before other image-blast skills (image-blast-uncover, image-blast-world, image-blast-3d, etc.) or whenever the user asks about active project state. 新建一个 image-blast 项目 看看当前项目状态 mit 3d 与图像生成">
+<h2>image-blast-project<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
+<p class="sum">管理 image-blaster 项目信封（worlds/&lt;slug&gt;）：状态、资产索引、下载与清理；其他子技能之前先用它。</p>
+<div class="trig">
+  <button data-copy="新建一个 image-blast 项目" title="点击复制">「新建一个 image-blast 项目」</button>
+  <button data-copy="看看当前项目状态" title="点击复制">「看看当前项目状态」</button>
+</div>
+<p class="detail">Create, inspect, and manage an IMAGE-BLAST project envelope under worlds/&lt;slug&gt;. Use before other image-blast skills (image-blast-uncover, image-blast-world, image-blast-3d, etc.) or whenever the user asks about active project state.</p>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/12-image-blast-project">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span></div>
+</section>
+<section class="card" data-origin="third" data-license="MIT" data-name="image-blast-sfx" data-triggers="配一段环境循环音|生成物体撞击音效" data-search="image-blast-sfx 生成并后处理音效：环境循环音与物体撞击音（elevenlabs sfx）。 generate and post-process a clean sound effect, object impact, or ambient loop. 配一段环境循环音 生成物体撞击音效 mit 3d 与图像生成">
+<h2>image-blast-sfx<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
+<p class="sum">生成并后处理音效：环境循环音与物体撞击音（ElevenLabs SFX）。</p>
+<div class="trig">
+  <button data-copy="配一段环境循环音" title="点击复制">「配一段环境循环音」</button>
+  <button data-copy="生成物体撞击音效" title="点击复制">「生成物体撞击音效」</button>
+</div>
+<p class="detail">Generate and post-process a clean sound effect, object impact, or ambient loop.</p>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/13-image-blast-sfx">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span></div>
+</section>
+<section class="card" data-origin="third" data-license="MIT" data-name="image-blast-uncover" data-triggers="分析这张图里有哪些物体|uncover 这张图" data-search="image-blast-uncover 主图像分析：识别图中物体、判断是否需要干净底板、给出初始场景描述。 main image analysis skill, object generation, plate decisionmaking, and initial scene description. use this skill when user wants to create objects and necessary for main image analysis. 分析这张图里有哪些物体 uncover 这张图 mit 3d 与图像生成">
+<h2>image-blast-uncover<span class="tag">2 文件</span><span class="tag">0.01 MB</span></h2>
+<p class="sum">主图像分析：识别图中物体、判断是否需要干净底板、给出初始场景描述。</p>
+<div class="trig">
+  <button data-copy="分析这张图里有哪些物体" title="点击复制">「分析这张图里有哪些物体」</button>
+  <button data-copy="uncover 这张图" title="点击复制">「uncover 这张图」</button>
+</div>
+<p class="detail">Main image analysis skill, object generation, plate decisionmaking, and initial scene description. Use this skill when user wants to create objects and necessary for main image analysis.</p>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/14-image-blast-uncover">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span></div>
+</section>
+<section class="card" data-origin="third" data-license="MIT" data-name="image-blast-wildcard" data-triggers="用 FAL 跑任意模型|试某个 FAL 接口" data-search="image-blast-wildcard 通用 fal 逃生口：跑任意 fal 模型/操作，用于其他子技能覆盖不到的生图需求。 discover and run any fal api model or operation the user requests. use this as a generic fal escape hatch when the user wants to generate something that does not fit a narrower image blast skill. 用 fal 跑任意模型 试某个 fal 接口 mit 3d 与图像生成">
+<h2>image-blast-wildcard<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
+<p class="sum">通用 FAL 逃生口：跑任意 FAL 模型/操作，用于其他子技能覆盖不到的生图需求。</p>
+<div class="trig">
+  <button data-copy="用 FAL 跑任意模型" title="点击复制">「用 FAL 跑任意模型」</button>
+  <button data-copy="试某个 FAL 接口" title="点击复制">「试某个 FAL 接口」</button>
+</div>
+<p class="detail">Discover and run any FAL API model or operation the user requests. Use this as a generic FAL escape hatch when the user wants to generate something that does not fit a narrower Image Blast skill.</p>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/15-image-blast-wildcard">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span></div>
+</section>
+<section class="card" data-origin="third" data-license="MIT" data-name="image-blast-world" data-triggers="生成 3D 环境|把场景做成可探索世界" data-search="image-blast-world 从源图或底板生成可探索的静态 3d 环境（world labs marble）。 generate the 3d static environment of a world from a source or plate image. 生成 3d 环境 把场景做成可探索世界 mit 3d 与图像生成">
+<h2>image-blast-world<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
+<p class="sum">从源图或底板生成可探索的静态 3D 环境（World Labs Marble）。</p>
+<div class="trig">
+  <button data-copy="生成 3D 环境" title="点击复制">「生成 3D 环境」</button>
+  <button data-copy="把场景做成可探索世界" title="点击复制">「把场景做成可探索世界」</button>
+</div>
+<p class="detail">Generate the 3D static environment of a world from a source or plate image.</p>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/16-image-blast-world">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span></div>
+</section>
+<section class="card" data-origin="third" data-license="MIT" data-name="image-blaster" data-triggers="把这张图做成 3D|生成可探索的 3D 环境|图片转 3D 环境|给这个场景配环境音" data-search="image-blaster 从单张图片生成一整套 3d 场景资产：静态环境高斯泼溅（.spz）、动态物体模型（.glb/.obj）、环境循环音与物理音效（.mp3）。 从单张图片生成可用的 3d 场景资产：静态环境的高斯泼溅（.spz）、动态物体的 3d 模型（.glb/.obj）、环境循环音与物理音效（.mp3），由 world labs marble 与 fal 上的模型（nano-banana / gpt-image-2 / hunyuan-3d / elevenlabs-sfx）驱动。适用于把一张图做成游戏关卡概念、影视场景、机器人训练环境、建筑渲染的可探索 3d 环境。触发词：image-blaster、image-blast、把这张图做成 3d、图片转 3d、生成 3d 环境、高斯泼溅、物体建模、给场景配环境音。 把这张图做成 3d 生成可探索的 3d 环境 图片转 3d 环境 给这个场景配环境音 mit 3d 与图像生成">
+<h2>image-blaster<span class="tag">142 文件</span><span class="tag">23.06 MB</span></h2>
+<p class="sum">从单张图片生成一整套 3D 场景资产：静态环境高斯泼溅（.spz）、动态物体模型（.glb/.obj）、环境循环音与物理音效（.mp3）。</p>
+<div class="trig">
+  <button data-copy="把这张图做成 3D" title="点击复制">「把这张图做成 3D」</button>
+  <button data-copy="生成可探索的 3D 环境" title="点击复制">「生成可探索的 3D 环境」</button>
+  <button data-copy="图片转 3D 环境" title="点击复制">「图片转 3D 环境」</button>
+  <button data-copy="给这个场景配环境音" title="点击复制">「给这个场景配环境音」</button>
+</div>
+<p class="detail">从单张图片生成可用的 3D 场景资产：静态环境的高斯泼溅（.spz）、动态物体的 3D 模型（.glb/.obj）、环境循环音与物理音效（.mp3），由 World Labs Marble 与 FAL 上的模型（nano-banana / gpt-image-2 / hunyuan-3d / elevenlabs-sfx）驱动。适用于把一张图做成游戏关卡概念、影视场景、机器人训练环境、建筑渲染的可探索 3D 环境。触发词：image-blaster、IMAGE-BLAST、把这张图做成 3D、图片转 3D、生成 3D 环境、高斯泼溅、物体建模、给场景配环境音。</p>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/17-image-blaster">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span></div>
 </section>
 </details>
 </div><p class="empty" id="none" style="display:none">没有匹配的技能</p>
