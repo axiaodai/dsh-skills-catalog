@@ -27,6 +27,9 @@ details.grp[open]>summary:before{content:"▾"}
 .sum{margin:4px 0 8px}
 .src{margin:0 0 9px;font-size:13px;color:var(--dim);word-break:break-all}
 .src .lic{margin-left:10px;white-space:nowrap}
+.inst{margin:0 0 10px}
+.inst button{background:var(--chip);color:var(--accent);border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-size:13px;cursor:pointer}
+.inst button:hover{border-color:var(--accent)}
 .trig{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
 .trig button{background:transparent;color:var(--accent);border:1px dashed var(--line);border-radius:8px;padding:3px 9px;font-size:13px;cursor:pointer}
 .trig button:hover{border-color:var(--accent)}
@@ -41,7 +44,7 @@ a:hover{text-decoration:underline}
 </style>
 </head><body>
 <header><h1>DSH 技能索引</h1>
-<div class="meta">19 个技能 · 3 组 · 生成于 2026-10-05 16:33 · 本体在私有仓库 <a href="https://github.com/axiaodai/dsh-skills">axiaodai/dsh-skills</a></div>
+<div class="meta">19 个技能 · 3 组 · 生成于 2026-10-05 16:38 · 本体在私有仓库 <a href="https://github.com/axiaodai/dsh-skills">axiaodai/dsh-skills</a></div>
 </header><main>
 <input id="q" placeholder="搜索技能名 / 用途 / 触发词…" autocomplete="off">
 <div class="filters" id="filters">
@@ -74,6 +77,8 @@ a:hover{text-decoration:underline}
 <h2>bys-travel-plan<span class="tag">25 文件</span><span class="tag">0.41 MB</span></h2>
 <p class="sum">对话式旅行规划：从「不知道去哪」到可以照着走的每日行程，交付 Markdown 攻略与单文件 HTML 手账。</p>
         <p class="src">安装来源：<a href="https://github.com/qkgecn93/bys-travel-plan" target="_blank" rel="noopener">qkgecn93/bys-travel-plan</a><span class="lic">授权：MIT</span></p>
+        <p class="inst"><button data-install="帮我安装 bys-travel-plan 这个技能，来源 https://github.com/qkgecn93/bys-travel-plan
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="下个月想找个周末出去玩" title="点击复制">「下个月想找个周末出去玩」</button>
   <button data-copy="帮我做 XX 攻略" title="点击复制">「帮我做 XX 攻略」</button>
@@ -87,6 +92,8 @@ a:hover{text-decoration:underline}
 <h2>handdraw-style-prompter<span class="tag">795 文件</span><span class="tag">49.02 MB</span></h2>
 <p class="sum">手绘风格编号（#001–#288）与主题色（C-01–C-36）提示词库，覆盖配图、海报、封面、IP 形象与风格融合。</p>
         <p class="src">安装来源：<a href="https://github.com/yang0/handraw-style" target="_blank" rel="noopener">yang0/handraw-style</a><span class="lic">授权：未声明</span></p>
+        <p class="inst"><button data-install="帮我安装 handdraw-style-prompter 这个技能，来源 https://github.com/yang0/handraw-style
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="用 #018 风格写生图提示词" title="点击复制">「用 #018 风格写生图提示词」</button>
   <button data-copy="给文章做封面" title="点击复制">「给文章做封面」</button>
@@ -100,6 +107,8 @@ a:hover{text-decoration:underline}
 <h2>book-to-skill<span class="tag">119 文件</span><span class="tag">1.8 MB</span></h2>
 <p class="sum">把书或文档（PDF/EPUB/DOCX/HTML/MD…）转成结构化技能：分章正文 + 术语 + 模式 + 速查表。</p>
         <p class="src">安装来源：<a href="https://github.com/virgiliojr94/book-to-skill" target="_blank" rel="noopener">virgiliojr94/book-to-skill</a><span class="lic">授权：MIT</span></p>
+        <p class="inst"><button data-install="帮我安装 book-to-skill 这个技能，来源 https://github.com/virgiliojr94/book-to-skill
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="把这本书转成技能" title="点击复制">「把这本书转成技能」</button>
   <button data-copy="用 book-to-skill 处理这份 PDF" title="点击复制">「用 book-to-skill 处理这份 PDF」</button>
@@ -138,6 +147,8 @@ a:hover{text-decoration:underline}
 <h2>&quot;cli-anything-photoshop&quot;<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
 <p class="sum">用命令行驱动 Photoshop：建 PSD、图层与选区操作、加文字层、导出 PNG/JPEG/WebP。</p>
         <p class="src">安装来源：<a href="https://github.com/yb2460/harness-anything" target="_blank" rel="noopener">yb2460/harness-anything</a><span class="lic">授权：MIT</span></p>
+        <p class="inst"><button data-install="帮我安装 &quot;cli-anything-photoshop&quot; 这个技能，来源 https://github.com/yb2460/harness-anything
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="新建 1920&#215;1080 的 PSD" title="点击复制">「新建 1920&#215;1080 的 PSD」</button>
   <button data-copy="加一个标题文字层" title="点击复制">「加一个标题文字层」</button>
@@ -150,6 +161,8 @@ a:hover{text-decoration:underline}
 <h2>&quot;cli-anything-wps&quot;<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
 <p class="sum">用命令行驱动 WPS / Office 生成 Word、Excel、PPT、PDF，支持 JSON 数据驱动的批量出稿。</p>
         <p class="src">安装来源：<a href="https://github.com/yb2460/harness-anything" target="_blank" rel="noopener">yb2460/harness-anything</a><span class="lic">授权：MIT</span></p>
+        <p class="inst"><button data-install="帮我安装 &quot;cli-anything-wps&quot; 这个技能，来源 https://github.com/yb2460/harness-anything
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="用 WPS 生成一份 PPTX" title="点击复制">「用 WPS 生成一份 PPTX」</button>
   <button data-copy="JSON 数据做成 12 页 PPT" title="点击复制">「JSON 数据做成 12 页 PPT」</button>
@@ -162,6 +175,8 @@ a:hover{text-decoration:underline}
 <h2>cli-anything-zotero<span class="tag">1 文件</span><span class="tag">0.01 MB</span></h2>
 <p class="sum">Zotero 文献库命令行接口，并接入 27 个学术技能（写论文、系统评价、审稿、期刊图表等）。</p>
         <p class="src">安装来源：<a href="https://github.com/yb2460/harness-anything" target="_blank" rel="noopener">yb2460/harness-anything</a><span class="lic">授权：MIT</span></p>
+        <p class="inst"><button data-install="帮我安装 cli-anything-zotero 这个技能，来源 https://github.com/yb2460/harness-anything
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="列出我 Zotero 里的条目" title="点击复制">「列出我 Zotero 里的条目」</button>
   <button data-copy="导出 APA 引文" title="点击复制">「导出 APA 引文」</button>
@@ -188,6 +203,8 @@ a:hover{text-decoration:underline}
 <h2>image-blast-3d<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
 <p class="sum">生成单个原子 3D 物体（Hunyuan / Meshy），可选面数、PBR、LowPoly 等参数。</p>
         <p class="src">安装来源：<a href="https://github.com/neilsonnn/image-blaster" target="_blank" rel="noopener">neilsonnn/image-blaster</a><span class="lic">授权：MIT</span></p>
+        <p class="inst"><button data-install="帮我安装 image-blast-3d 这个技能，来源 https://github.com/neilsonnn/image-blaster
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="把这个物体做成 3D 模型" title="点击复制">「把这个物体做成 3D 模型」</button>
   <button data-copy="生成一个 glb 模型" title="点击复制">「生成一个 glb 模型」</button>
@@ -199,6 +216,8 @@ a:hover{text-decoration:underline}
 <h2>image-blast-image-edit<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
 <p class="sum">单次图像编辑（FAL 支撑）：源图清理、去物体、生成底板。</p>
         <p class="src">安装来源：<a href="https://github.com/neilsonnn/image-blaster" target="_blank" rel="noopener">neilsonnn/image-blaster</a><span class="lic">授权：MIT</span></p>
+        <p class="inst"><button data-install="帮我安装 image-blast-image-edit 这个技能，来源 https://github.com/neilsonnn/image-blaster
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="编辑这张图" title="点击复制">「编辑这张图」</button>
   <button data-copy="把画面里某样东西去掉" title="点击复制">「把画面里某样东西去掉」</button>
@@ -210,6 +229,8 @@ a:hover{text-decoration:underline}
 <h2>image-blast-plate<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
 <p class="sum">生成干净底板：把前景物体从源图移除，作为环境生成的输入。</p>
         <p class="src">安装来源：<a href="https://github.com/neilsonnn/image-blaster" target="_blank" rel="noopener">neilsonnn/image-blaster</a><span class="lic">授权：MIT</span></p>
+        <p class="inst"><button data-install="帮我安装 image-blast-plate 这个技能，来源 https://github.com/neilsonnn/image-blaster
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="生成干净底板" title="点击复制">「生成干净底板」</button>
   <button data-copy="把前景物体从图里去掉" title="点击复制">「把前景物体从图里去掉」</button>
@@ -221,6 +242,8 @@ a:hover{text-decoration:underline}
 <h2>image-blast-project<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
 <p class="sum">管理 image-blaster 项目信封（worlds/&lt;slug&gt;）：状态、资产索引、下载与清理；其他子技能之前先用它。</p>
         <p class="src">安装来源：<a href="https://github.com/neilsonnn/image-blaster" target="_blank" rel="noopener">neilsonnn/image-blaster</a><span class="lic">授权：MIT</span></p>
+        <p class="inst"><button data-install="帮我安装 image-blast-project 这个技能，来源 https://github.com/neilsonnn/image-blaster
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="新建一个 image-blast 项目" title="点击复制">「新建一个 image-blast 项目」</button>
   <button data-copy="看看当前项目状态" title="点击复制">「看看当前项目状态」</button>
@@ -232,6 +255,8 @@ a:hover{text-decoration:underline}
 <h2>image-blast-sfx<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
 <p class="sum">生成并后处理音效：环境循环音与物体撞击音（ElevenLabs SFX）。</p>
         <p class="src">安装来源：<a href="https://github.com/neilsonnn/image-blaster" target="_blank" rel="noopener">neilsonnn/image-blaster</a><span class="lic">授权：MIT</span></p>
+        <p class="inst"><button data-install="帮我安装 image-blast-sfx 这个技能，来源 https://github.com/neilsonnn/image-blaster
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="配一段环境循环音" title="点击复制">「配一段环境循环音」</button>
   <button data-copy="生成物体撞击音效" title="点击复制">「生成物体撞击音效」</button>
@@ -243,6 +268,8 @@ a:hover{text-decoration:underline}
 <h2>image-blast-uncover<span class="tag">2 文件</span><span class="tag">0.01 MB</span></h2>
 <p class="sum">主图像分析：识别图中物体、判断是否需要干净底板、给出初始场景描述。</p>
         <p class="src">安装来源：<a href="https://github.com/neilsonnn/image-blaster" target="_blank" rel="noopener">neilsonnn/image-blaster</a><span class="lic">授权：MIT</span></p>
+        <p class="inst"><button data-install="帮我安装 image-blast-uncover 这个技能，来源 https://github.com/neilsonnn/image-blaster
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="分析这张图里有哪些物体" title="点击复制">「分析这张图里有哪些物体」</button>
   <button data-copy="uncover 这张图" title="点击复制">「uncover 这张图」</button>
@@ -254,6 +281,8 @@ a:hover{text-decoration:underline}
 <h2>image-blast-wildcard<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
 <p class="sum">通用 FAL 逃生口：跑任意 FAL 模型/操作，用于其他子技能覆盖不到的生图需求。</p>
         <p class="src">安装来源：<a href="https://github.com/neilsonnn/image-blaster" target="_blank" rel="noopener">neilsonnn/image-blaster</a><span class="lic">授权：MIT</span></p>
+        <p class="inst"><button data-install="帮我安装 image-blast-wildcard 这个技能，来源 https://github.com/neilsonnn/image-blaster
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="用 FAL 跑任意模型" title="点击复制">「用 FAL 跑任意模型」</button>
   <button data-copy="试某个 FAL 接口" title="点击复制">「试某个 FAL 接口」</button>
@@ -265,6 +294,8 @@ a:hover{text-decoration:underline}
 <h2>image-blast-world<span class="tag">1 文件</span><span class="tag">0 MB</span></h2>
 <p class="sum">从源图或底板生成可探索的静态 3D 环境（World Labs Marble）。</p>
         <p class="src">安装来源：<a href="https://github.com/neilsonnn/image-blaster" target="_blank" rel="noopener">neilsonnn/image-blaster</a><span class="lic">授权：MIT</span></p>
+        <p class="inst"><button data-install="帮我安装 image-blast-world 这个技能，来源 https://github.com/neilsonnn/image-blaster
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="生成 3D 环境" title="点击复制">「生成 3D 环境」</button>
   <button data-copy="把场景做成可探索世界" title="点击复制">「把场景做成可探索世界」</button>
@@ -276,6 +307,8 @@ a:hover{text-decoration:underline}
 <h2>image-blaster<span class="tag">142 文件</span><span class="tag">23.06 MB</span></h2>
 <p class="sum">从单张图片生成一整套 3D 场景资产：静态环境高斯泼溅（.spz）、动态物体模型（.glb/.obj）、环境循环音与物理音效（.mp3）。</p>
         <p class="src">安装来源：<a href="https://github.com/neilsonnn/image-blaster" target="_blank" rel="noopener">neilsonnn/image-blaster</a><span class="lic">授权：MIT</span></p>
+        <p class="inst"><button data-install="帮我安装 image-blaster 这个技能，来源 https://github.com/neilsonnn/image-blaster
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
 <div class="trig">
   <button data-copy="把这张图做成 3D" title="点击复制">「把这张图做成 3D」</button>
   <button data-copy="生成可探索的 3D 环境" title="点击复制">「生成可探索的 3D 环境」</button>
@@ -338,6 +371,8 @@ document.getElementById("copyall").addEventListener("click",()=>{
   copy(lines.join("\n"),"已复制 "+cards.filter(c=>c.style.display!=="none").length+" 个技能");
 });
 document.getElementById("list").addEventListener("click",e=>{
+  const inst=e.target.closest("button[data-install]");
+  if(inst){copy(inst.dataset.install,"已复制安装指令，粘到对话框即可");return;}
   const b=e.target.closest("button[data-copy]");if(!b)return;
   copy(b.dataset.copy,"已复制："+b.dataset.copy);
 });
