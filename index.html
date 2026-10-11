@@ -15,6 +15,7 @@ main{padding:16px 20px 60px;max-width:980px;margin:0 auto}
 .filters button{background:var(--chip);color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer}
 .filters button.on{color:#0f1115;background:var(--accent);border-color:var(--accent)}
 .filters .sep{color:var(--line)}
+.filters .copyrepo{margin-left:auto;color:var(--accent);border-style:dashed}
 details.grp{border-top:1px solid var(--line);padding-top:6px;margin-bottom:6px}
 details.grp>summary{cursor:pointer;font-size:15px;font-weight:600;padding:8px 2px;list-style:none;display:flex;gap:8px;align-items:center}
 details.grp>summary::-webkit-details-marker{display:none}
@@ -44,7 +45,7 @@ a:hover{text-decoration:underline}
 </style>
 </head><body>
 <header><h1>DSH 技能索引</h1>
-<div class="meta">31 个技能 · 3 组 · 生成于 2026-10-11 15:13 · 本体在私有仓库 <a href="https://github.com/axiaodai/dsh-skills">axiaodai/dsh-skills</a></div>
+<div class="meta">31 个技能 · 3 组 · 生成于 2026-10-11 15:16 · 本体在私有仓库 <a href="https://github.com/axiaodai/dsh-skills">axiaodai/dsh-skills</a></div>
 </header><main>
 <input id="q" placeholder="搜索技能名 / 用途 / 触发词…" autocomplete="off">
 <div class="filters" id="filters">
@@ -56,6 +57,27 @@ a:hover{text-decoration:underline}
   <button data-f="license" data-v="MIT">MIT</button>
   <button data-f="license" data-v="未声明">未声明</button>
   <button data-f="license" data-v="自建">自建</button>
+  <button class="copyrepo" data-copy="帮我把 GitHub 私有仓库 axiaodai/dsh-skills 里的全部技能整仓恢复到本机 DSH，并一键重建全部自动化。
+
+步骤：
+1. 克隆或更新仓库：git clone https://github.com/axiaodai/dsh-skills.git
+   （私有仓库，需要我的 GitHub 凭据）
+2. 在仓库根目录先试跑：
+   powershell -NoProfile -ExecutionPolicy Bypass -File tools\restore-all.ps1 -DryRun
+   确认报告无误后，去掉 -DryRun 正式执行一次。
+   这个脚本会：按 tools\skills-map.json 把 skills\ 下全部 31 个技能装回本机技能根目录
+   （自动去掉 01- 这类编号前缀，07-harness-cli-skills 自动展开成 3 个顶层技能）、
+   探测 git/gh 并检查 GitHub 连接、重建两条隐藏计划任务
+   （DSH-Sync-Skills / DSH-Serve-Skills-Index）与入站防火墙规则（TCP 8765）。
+3. 装完确认全部技能都出现在 DSH 的技能目录里（实时发现，无需重启），并报告失败项。
+
+注意：
+- 技能根目录通常是 %USERPROFILE%\.dsh\skills，或 DSH 安装目录下的 resources\runtime\skills；
+  不要假设盘符或用户名，先探测再动手。
+- git 与 gh 是原生程序、不读系统代理；若直连 github.com 不通，需显式设置
+  HTTPS_PROXY=http://127.0.0.1:11119
+- 若要改 tools\ 下的 .ps1，必须保持 UTF-8 带 BOM，否则 Windows PowerShell 5.1 会按 GBK
+  解码，中文字节错解后吃掉引号，脚本直接语法错误。" title="复制一条指令：整仓恢复全部技能 + 重建全部自动化">复制整仓恢复指令</button>
 </div>
 <div id="list">
 <details class="grp" open><summary>内容创作<span class="tag">11</span></summary>
@@ -559,6 +581,8 @@ async function copy(text,msg){
 }
 q.addEventListener("input",apply);
 document.getElementById("filters").addEventListener("click",e=>{
+  const cb=e.target.closest("button[data-copy]");
+  if(cb){copy(cb.dataset.copy,"已复制整仓恢复指令，粘给豆包即可");return;}
   const b=e.target.closest("button[data-f]");if(!b)return;
   const field=b.dataset.f;f[field]=b.dataset.v;
   document.querySelectorAll('button[data-f="'+field+'"]').forEach(x=>x.classList.toggle("on",x===b));
