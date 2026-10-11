@@ -15,7 +15,6 @@ main{padding:16px 20px 60px;max-width:980px;margin:0 auto}
 .filters button{background:var(--chip);color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer}
 .filters button.on{color:#0f1115;background:var(--accent);border-color:var(--accent)}
 .filters .sep{color:var(--line)}
-.filters .copyall{margin-left:auto;color:var(--accent);border-style:dashed}
 details.grp{border-top:1px solid var(--line);padding-top:6px;margin-bottom:6px}
 details.grp>summary{cursor:pointer;font-size:15px;font-weight:600;padding:8px 2px;list-style:none;display:flex;gap:8px;align-items:center}
 details.grp>summary::-webkit-details-marker{display:none}
@@ -31,8 +30,9 @@ details.grp[open]>summary:before{content:"▾"}
 .inst button{background:var(--chip);color:var(--accent);border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-size:13px;cursor:pointer}
 .inst button:hover{border-color:var(--accent)}
 .trig{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
-.trig button{background:transparent;color:var(--accent);border:1px dashed var(--line);border-radius:8px;padding:3px 9px;font-size:13px;cursor:pointer}
-.trig button:hover{border-color:var(--accent)}
+.trig button{background:var(--chip);color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:13px;cursor:pointer}
+.trig button:hover{border-color:var(--accent);background:var(--card)}
+.trig button:active{transform:scale(.97)}
 .detail{margin:0 0 8px;color:var(--dim);font-size:13px;white-space:pre-wrap}
 .foot{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--dim)}
 a{color:var(--accent);text-decoration:none}
@@ -44,7 +44,7 @@ a:hover{text-decoration:underline}
 </style>
 </head><body>
 <header><h1>DSH 技能索引</h1>
-<div class="meta">31 个技能 · 3 组 · 生成于 2026-10-11 15:03 · 本体在私有仓库 <a href="https://github.com/axiaodai/dsh-skills">axiaodai/dsh-skills</a></div>
+<div class="meta">31 个技能 · 3 组 · 生成于 2026-10-11 15:09 · 本体在私有仓库 <a href="https://github.com/axiaodai/dsh-skills">axiaodai/dsh-skills</a></div>
 </header><main>
 <input id="q" placeholder="搜索技能名 / 用途 / 触发词…" autocomplete="off">
 <div class="filters" id="filters">
@@ -56,7 +56,6 @@ a:hover{text-decoration:underline}
   <button data-f="license" data-v="MIT">MIT</button>
   <button data-f="license" data-v="未声明">未声明</button>
   <button data-f="license" data-v="自建">自建</button>
-  <button class="copyall" id="copyall" title="把当前可见技能的触发词全部复制">复制全部触发词</button>
 </div>
 <div id="list">
 <details class="grp" open><summary>内容创作<span class="tag">11</span></summary>
@@ -535,9 +534,28 @@ function apply(){
   none.style.display=n?"none":"block";
 }
 function flash(msg){toast.textContent=msg;toast.classList.add("on");setTimeout(()=>toast.classList.remove("on"),1400);}
+function legacyCopy(text){
+  // navigator.clipboard only exists in a *secure context*. This page is normally
+  // opened from file:// (the Desktop copy) or over plain http on the LAN
+  // (http://<ip>:8765/), and neither is secure -- so clipboard.writeText is
+  // missing there and every copy button silently failed on the phone.
+  // Fall back to the old hidden-textarea + execCommand trick.
+  const ta=document.createElement("textarea");
+  ta.value=text;ta.setAttribute("readonly","");
+  ta.style.position="fixed";ta.style.top="-1000px";ta.style.opacity="0";
+  document.body.appendChild(ta);
+  ta.select();ta.setSelectionRange(0,ta.value.length);
+  let ok=false;
+  try{ok=document.execCommand("copy");}catch(_){ok=false;}
+  document.body.removeChild(ta);
+  return ok;
+}
 async function copy(text,msg){
-  try{await navigator.clipboard.writeText(text);flash(msg);}
-  catch(_){flash("复制失败，请长按选择");}
+  if(navigator.clipboard&&window.isSecureContext){
+    try{await navigator.clipboard.writeText(text);flash(msg);return;}catch(_){}
+  }
+  if(legacyCopy(text)){flash(msg);return;}
+  flash("复制失败，请长按手动选择");
 }
 q.addEventListener("input",apply);
 document.getElementById("filters").addEventListener("click",e=>{
@@ -545,21 +563,6 @@ document.getElementById("filters").addEventListener("click",e=>{
   const field=b.dataset.f;f[field]=b.dataset.v;
   document.querySelectorAll('button[data-f="'+field+'"]').forEach(x=>x.classList.toggle("on",x===b));
   apply();
-});
-document.getElementById("copyall").addEventListener("click",()=>{
-  const lines=["DSH 技能触发词速查",""];
-  for(const g of groups){
-    if(g.style.display==="none")continue;
-    const cs=[...g.querySelectorAll(".card")].filter(c=>c.style.display!=="none");
-    if(!cs.length)continue;
-    lines.push("【"+g.querySelector("summary").textContent.replace(/\d+$/,"").trim()+"】");
-    for(const c of cs){
-      const t=(c.dataset.triggers||"").split("|").filter(Boolean);
-      lines.push("- "+c.dataset.name+(t.length?"：" + t.join(" / "):""));
-    }
-    lines.push("");
-  }
-  copy(lines.join("\n"),"已复制 "+cards.filter(c=>c.style.display!=="none").length+" 个技能");
 });
 document.getElementById("list").addEventListener("click",e=>{
   const inst=e.target.closest("button[data-install]");
