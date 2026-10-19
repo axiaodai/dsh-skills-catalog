@@ -47,7 +47,7 @@ a:hover{text-decoration:underline}
 </style>
 </head><body>
 <header><h1>DSH 技能索引</h1>
-<div class="meta">31 个技能 · 3 组 · 生成于 2026-10-12 11:16 · 本体在私有仓库 <a href="https://github.com/axiaodai/dsh-skills">axiaodai/dsh-skills</a></div>
+<div class="meta">32 个技能 · 4 组 · 生成于 2026-10-19 16:55 · 本体在私有仓库 <a href="https://github.com/axiaodai/dsh-skills">axiaodai/dsh-skills</a></div>
 </header><main>
 <input id="q" placeholder="搜索技能名 / 用途 / 触发词 / 仓库名…" autocomplete="off">
 <div class="filters" id="filters">
@@ -68,7 +68,7 @@ a:hover{text-decoration:underline}
 2. 在仓库根目录先试跑：
    powershell -NoProfile -ExecutionPolicy Bypass -File tools\restore-all.ps1 -DryRun
    确认报告无误后，去掉 -DryRun 正式执行一次。
-   这个脚本会：按 tools\skills-map.json 把 skills\ 下全部 31 个技能装回本机技能根目录
+   这个脚本会：按 tools\skills-map.json 把 skills\ 下全部 32 个技能装回本机技能根目录
    （自动去掉 01- 这类编号前缀，07-harness-cli-skills 自动展开成 3 个顶层技能）、
    探测 git/gh 并检查 GitHub 连接、重建两条隐藏计划任务
    （DSH-Sync-Skills / DSH-Serve-Skills-Index）与入站防火墙规则（TCP 8765）。
@@ -591,6 +591,25 @@ a:hover{text-decoration:underline}
 </div>
 <p class="detail">从单张图片生成可用的 3D 场景资产：静态环境的高斯泼溅（.spz）、动态物体的 3D 模型（.glb/.obj）、环境循环音与物理音效（.mp3），由 World Labs Marble 与 FAL 上的模型（nano-banana / gpt-image-2 / hunyuan-3d / elevenlabs-sfx）驱动。适用于把一张图做成游戏关卡概念、影视场景、机器人训练环境、建筑渲染的可探索 3D 环境。触发词：image-blaster、IMAGE-BLAST、把这张图做成 3D、图片转 3D、生成 3D 环境、高斯泼溅、物体建模、给场景配环境音。</p>
 <div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/17-image-blaster">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：MIT</span><span>更新于 2026-10-11</span></div>
+</section>
+</details>
+<details class="grp" open><summary>其他<span class="tag">1</span></summary>
+<section class="card" data-origin="third" data-license="未声明" data-name="ghosttrack" data-triggers="查IP|IP归属|号码归属地|这个号码是哪的|查用户名|OSINT 信息查询" data-search="ghosttrack 在本人或已获授权对象上做公开信息（osint）查询：查 ip 归属与地理位置、查电话号码归属地/运营商/时区、查用户名在哪些网站注册过、查本机公网 ip。 在本人或已获授权对象上做公开信息（osint）查询：查 ip 归属与地理位置、查电话号码归属地/运营商/时区、查用户名在哪些网站注册过、查本机公网 ip。基于 ghosttrack（hunxbyts/ghosttrack）的非交互包装，直接返回中文 json。触发词：查ip、ip归属、号码归属地、这个号码是哪的、查用户名、osint 信息查询、ghosttrack。 查ip ip归属 号码归属地 这个号码是哪的 查用户名 osint 信息查询 未声明 其他">
+<h2>ghosttrack<span class="tag">2 文件</span><span class="tag">0.02 MB</span></h2>
+<p class="sum">在本人或已获授权对象上做公开信息（OSINT）查询：查 IP 归属与地理位置、查电话号码归属地/运营商/时区、查用户名在哪些网站注册过、查本机公网 IP。</p>
+        <p class="src">安装来源：<a href="https://github.com/HunxByts/GhostTrack" target="_blank" rel="noopener">HunxByts/GhostTrack</a><span class="lic">授权：未声明</span></p>
+        <p class="inst"><button data-install="帮我安装 ghosttrack 这个技能，来源 https://github.com/HunxByts/GhostTrack
+（要求：装到 DSH 技能根目录、不要放在 C 盘其它位置；上游若把技能放在 .claude/skills/ 等子目录里，请把每个子技能各自平铺成顶层技能；装完同步进我的技能归档仓库并更新索引页）" title="点击复制安装指令">复制安装提示词</button></p>
+<div class="trig">
+  <button data-copy="查IP" title="点击复制">「查IP」</button>
+  <button data-copy="IP归属" title="点击复制">「IP归属」</button>
+  <button data-copy="号码归属地" title="点击复制">「号码归属地」</button>
+  <button data-copy="这个号码是哪的" title="点击复制">「这个号码是哪的」</button>
+  <button data-copy="查用户名" title="点击复制">「查用户名」</button>
+  <button data-copy="OSINT 信息查询" title="点击复制">「OSINT 信息查询」</button>
+</div>
+<p class="detail">在本人或已获授权对象上做公开信息（OSINT）查询：查 IP 归属与地理位置、查电话号码归属地/运营商/时区、查用户名在哪些网站注册过、查本机公网 IP。基于 GhostTrack（HunxByts/GhostTrack）的非交互包装，直接返回中文 JSON。触发词：查IP、IP归属、号码归属地、这个号码是哪的、查用户名、OSINT 信息查询、GhostTrack。</p>
+<div class="foot"><a href="https://github.com/axiaodai/dsh-skills/tree/main/skills/30-ghosttrack">目录</a><a href="{0}" target="_blank" rel="noopener">上游</a><span>授权：未声明</span></div>
 </section>
 </details>
 </div><p class="empty" id="none" style="display:none">没有匹配的技能</p>
